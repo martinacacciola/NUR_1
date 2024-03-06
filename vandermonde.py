@@ -128,7 +128,7 @@ line,=axs[0].plot(xx,yya,color='orange')
 line.set_label('Via LU decomposition')
 axs[0].legend(frameon=False,loc="lower left")
 axs[1].plot(x,abs(y-ya),color='orange')
-plt.savefig('plots/my_vandermonde_sol_2a.png',dpi=600)
+plt.savefig('plots/my_vandermonde_sol_2a.png',dpi=300)
 
 
 '''
@@ -205,7 +205,7 @@ line, = axs[0].plot(xx, yyb, linestyle='dashed', color='green')
 line.set_label("Via Neville's algorithm")
 axs[0].legend(frameon=False, loc="lower left")
 axs[1].plot(x, abs(y - yb), linestyle='dashed', color='green')
-plt.savefig('plots/my_vandermonde_sol_2b.png', dpi=600)
+plt.savefig('plots/my_vandermonde_sol_2b.png', dpi=300)
 
 '''
 Point c):
@@ -278,7 +278,7 @@ line.set_label('LU with 10 iterations')
 axs[1].plot(x,abs(y-ya10),linestyle='dashdot',color='purple')
 
 axs[0].legend(frameon=False,loc="lower left")
-plt.savefig('plots/my_vandermonde_sol_2c.png',dpi=600)
+plt.savefig('plots/my_vandermonde_sol_2c.png',dpi=300)
 
 '''
 Point d): Exection time comparison
