@@ -186,8 +186,8 @@ def neville(x, y, x0, M):
 xx = np.linspace(0, 100, 1000)
 
 # Interpolation using Neville's algorithm
-yyb = np.array([neville(x, y, xi) for xi in xx])
-yb = np.array([neville(x, y, xi) for xi in x])
+yyb = np.array([neville(x, y, xi, 20) for xi in xx])
+yb = np.array([neville(x, y, xi, 20) for xi in x])
 
 # Plotting
 fig = plt.figure()
