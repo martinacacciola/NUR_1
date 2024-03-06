@@ -18,19 +18,15 @@ Firstly we initialize L and U as zero matrices of the same size as A.
 Setting alpha_ii is done implicitly in passage 1: 
 since L[i, :i] and U[:i, i] are both zero vectors at this point this dot product is zero, and so U[i, i] is just A[i, i].
 Then we update the elements of L and U loop over the columns.
-In passage 1, we set beta_{0j} = alpha_{0j} (where i < j)
-In passage 2, all alpha_{ij} (where i > j) are expressed in previously calculated values: alpha_{ij} = 1/beta_{ii} * (alpha_{ij} - Σ_{k=0}^{i-1} beta_{ik} * alpha_{kj})
 
 
 2. Forward substitution: we solve Ly = b for y. 
 We initialize y as a zero vector of the same size as b. 
-Then we solve the system iteratively for each element of y starting from first element
-using y[i] = (b[i] - Σ_{j=0}^{i-1} alpha[i, j] * y[j]) / alpha[i, i] in passage 3.
+Then we solve the system iteratively for each element of y starting from first element.
 
 3. Backward substitution: we solve Ux = y for x.
 We initialize x as a zero vector of the same size as y.
 Then we solve the system iteratively for each element of x starting from the last element
-using x[i] = (y[i] - Σ_{j=i+1}^{n-1} beta[i, j] * x[j]) / beta[i, i] in passage 4.
 '''
 
 # LU Decomposition 
