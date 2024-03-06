@@ -1,7 +1,7 @@
 \section{Ex. 1 - 2. Vandermonde matrix}
 %\lstinputlisting{vandermonde.py}
 In this section, we add the comments to the plots produced by the script given by: vandermonde.py .
-For question (a), we are performing a polynomial interpolation on a set of data points using a 19th-degree polynomial, evaluated at $\approx$ 1000 equally-spaced points. The coefficients of the polynomial are determined by solving a system of linear equations using LU decomposition. We also plot the absolute difference between the given points $y_i$ and our result $y(x)$, i.e. $\abs(y(x) − y_i$. \\
+For question (a), we are performing a polynomial interpolation on a set of data points using a 19th-degree polynomial, evaluated at $\approx$ 1000 equally-spaced points. The coefficients of the polynomial are determined by solving a system of linear equations using LU decomposition. We also plot the absolute difference between the given points $y_i$ and our result $y(x)$, i.e. $|y(x) − y_i)|$. \\
 
 From Fig.\ref{fig:lu_dec}, it seems that the polynomial is fitting the data points quite well for most of the range. This is expected as a polynomial of degree ($n$) can always fit ($n+1$) data points exactly. However, towards the end (around $x=100$), the polynomial shoots up drastically. This is a common issue with high-degree polynomial interpolation known as Runge's phenomenon. It is a form of overfitting where the polynomial oscillates significantly at the boundaries of the data set.
 
