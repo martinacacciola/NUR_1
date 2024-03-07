@@ -38,8 +38,7 @@ def lu_decomposition(A):
     U = np.zeros((n, n))
 
     # Loop over the columns
-    for i in range(n):
-        # Update the upper and lower triangular matrices
+    for i in range(n): # Update the upper and lower triangular matrices
         U[i, i:] = A[i, i:] - np.dot(L[i, :i], U[:i, i:]) # Passage 1
         L[i:, i] = (A[i:, i] - np.dot(L[i:, :i], U[:i, i])) / U[i, i] # Passage 2
 
