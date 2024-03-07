@@ -28,9 +28,9 @@ pdflatex template.tex
 pdflatex template.tex
 
 # Optional: Compile ex1_2.tex if needed
-pdflatex ex1_2.tex
-bibtex ex1_2.aux
-pdflatex ex1_2.tex
-pdflatex ex1_2.tex
+#pdflatex ex1_2.tex
+#bibtex ex1_2.aux
+#pdflatex ex1_2.tex
+#pdflatex ex1_2.tex
 
 echo "Script execution completed."
