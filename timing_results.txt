@@ -1,3 +1,3 @@
-LU Decomposition Time: 0.007179 seconds
-Neville's Algorithm Time: 9.462850 seconds
-Iterative Improvement Time: 0.106246 seconds
+LU Decomposition Time: 0.007137 seconds
+Neville's Algorithm Time: 9.440858 seconds
+Iterative Improvement Time: 0.105852 seconds
