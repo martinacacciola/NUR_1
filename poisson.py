@@ -34,7 +34,7 @@ def poisson_prob(l, k):
     
     # 1. log(lamba^k)
     lam_k_log = np.float32(k_values * log10(l)) 
-    # 2. lambda^-λ
+    # 2. e^-lambda
     e_neg_lambda = np.float32(log10(exp(-l))) 
     # 3. Factorial calculation: log(k!) and cumulative sum of log(k!) for all k from 2
     log_fact_k = np.float32(np.log10(np.arange(2, k + 1)))
