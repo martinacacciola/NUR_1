@@ -38,7 +38,8 @@ def lu_decomposition(A):
     U = np.zeros((n, n))
 
     # Loop over the columns
-    for i in range(n): # Update the upper and lower triangular matrices
+    for i in range(n):
+        # Update the upper and lower triangular matrices
         U[i, i:] = A[i, i:] - np.dot(L[i, :i], U[:i, i:]) # Passage 1
         L[i:, i] = (A[i:, i] - np.dot(L[i:, :i], U[:i, i])) / U[i, i] # Passage 2
 
@@ -215,8 +216,8 @@ To do so, we start by saving the value of the initial guess x0
 We then loop over the number of iterations and perform the following steps:
 1) Calculate delta_b from Ax'=b+delta_b where x'=x0+delta_x (the imperfect solution)
 2) Perform LU decomposition
-3) Solve Ly = δb for y
-4) Solve U δx = y for δx. This δx is used to improve the solution x0: x''=x'-δx (where x' is the current imperfect solution)
+3) Solve Ly = \del b for y
+4) Solve U \del x = y for \del x. This \del x is used to improve the solution x0: x''=x'-\del x (where x' is the current imperfect solution)
 
 '''
 # Function for iterative solution using LU decomposition
@@ -237,9 +238,9 @@ def iterative_improvement(A, b, x0, iterations):
         delta_b = np.dot(A, x) - b
         # Perform LU decomposition
         L, U = lu_decomposition(A)
-        # Solve Ly = δb for y
+        # Solve Ly = \del b for y
         y = forward_substitution(L, delta_b)
-        # Solve U δx = y for δx
+        # Solve U \del x = y for \del x
         delta_x = backward_substitution(U, y)
         # Improve the solution
         x -= delta_x
@@ -305,7 +306,3 @@ with open('timing_results.txt', 'w') as file:
     file.write(f"LU Decomposition Time: {lu_time:.6f} seconds\n")
     file.write(f"Neville's Algorithm Time: {neville_time:.6f} seconds\n")
     file.write(f"Iterative Improvement Time: {iterative_time:.6f} seconds\n")
-
-
-
-
